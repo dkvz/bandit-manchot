@@ -15,6 +15,7 @@ body {
   Found most of this here:
   https://leaverou.github.io/css3patterns/
   */
+  /*
   background-color: #edebed;
   background-image: linear-gradient(335deg, #b00 23px, transparent 23px),
   linear-gradient(155deg, #d00 23px, transparent 23px),
@@ -22,6 +23,11 @@ body {
   linear-gradient(155deg, #d00 23px, transparent 23px);
   background-size: 58px 58px;
   background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
+  */
+
+  background-color: #edebed;
+  background-image: url('./assets/patpull.jpg');
+  background-repeat: repeat;
 
   display: flex;
   flex-direction: column;
@@ -55,8 +61,13 @@ main > button:hover {
 
 .panel {
   border: 6px ridge peru;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 0.9);
   padding: 0.8rem;
+}
+
+.slot-panel {
+  position: relative;
+  padding-top: 2.5rem;
 }
 
 .buttons {
@@ -101,7 +112,7 @@ h1 {
   text-align: center;
   color: purple;
   background-color: rgba(255,255,255,0.6);
-  padding: 0.2rem;
+  padding: 0.7rem;
   border: 2px solid peru;
   text-shadow: 0px 0px 8px #222;
 }
@@ -111,9 +122,18 @@ h1 {
 }
 
 #status {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 300px;
+  height: 44px;
+  border-bottom: 6px ridge peru;
+  border-left: 6px ridge peru;
   font-weight: bolder;
-  font-size: 2rem;
-  text-align: center;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   animation: zomg 3s infinite;
 }
 

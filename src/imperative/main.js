@@ -128,5 +128,16 @@ resetBtn.addEventListener('click', () => {
 });
 
 
-// TO DEBUG
-window.state = state;
+betAddBtn.addEventListener('click', () => {
+  state.bet += 5;
+  updateUI(state, cashLabel, betLabel);
+});
+
+betRemoveBtn.addEventListener('click', () => {
+  if (state.bet === 5) {
+    alert('Impossible de miser moins.');
+  } else {
+    state.bet -= 5;
+  }
+  updateUI(state, cashLabel, betLabel);
+});
