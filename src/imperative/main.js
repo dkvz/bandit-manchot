@@ -58,6 +58,9 @@ const [
   'status'
 ].map(x => document.getElementById(x));
 
+// Get all the slot elements from the DOM:
+const slots = document.querySelectorAll('.slots > div');
+
 // Define a few constants, such as the
 // start money, bet and the image height
 // for the scrolling background we use
@@ -67,9 +70,6 @@ const startMoney = 500,
   imageHeight = 110,
   imageCount = 4,
   slotUpdateTime = 3;
-
-// Get all the slot elements from the DOM:
-const slots = document.querySelectorAll('.slots > div');
 
 // Object to hold state variables for 
 // the app. with a very inspired name.

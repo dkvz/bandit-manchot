@@ -1,0 +1,31 @@
+
+<h1>Machine à sous moche 1.0</h1>
+
+<main class="m">
+  <div class="panel slot-panel">
+    <div id="status"></div>
+    <p>Le truc à droite est un levier (je suis pas un artiste).</p>
+    <div class="slots">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <button id="leverBtn" aria-label="Abaisser le levier!" title="Abaisser le levier!" onclick="app.leverClick()">
+    <svg viewBox="0 -3 20 100" aria-hidden="true">
+      <line x1="10" y1="10" x2="10" y2="90" stroke="#444" stroke-width="2" />
+      <circle cx="10" cy="10" r="5" fill="red" />
+    </svg>
+  </button>
+  <div class="panel">
+    <div class="buttons">
+      <div>Cash: <span id="cashLabel">$0</span></div>
+      <div>Mise: <span id="betLabel">$0</span></div>
+    </div>
+    <div class="buttons mt-1">
+      <button id="betAddBtn">Miser+</button>
+      <button id="betRemoveBtn">Miser-</button>
+      <button id="resetBtn">Réinitialiser</button>
+    </div>
+  </div>
+</main>
