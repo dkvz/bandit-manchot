@@ -1,0 +1,16 @@
+{
+  "name": "bandit-machot",
+  "version": "1.0.0",
+  "description": "Didactic project to show different approaches to writing JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/imperative/index.pug",
+    "imperative": "npm run start"
+  },
+  "keywords": [],
+  "author": "dkvz",
+  "license": "MIT",
+  "devDependencies": {
+    "pug": "^2.0.4"
+  }
+}

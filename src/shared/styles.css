@@ -1,0 +1,127 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  color: #000;
+  /* 
+  Found most of this here:
+  https://leaverou.github.io/css3patterns/
+  */
+  background-color: #edebed;
+  background-image: linear-gradient(335deg, #b00 23px, transparent 23px),
+  linear-gradient(155deg, #d00 23px, transparent 23px),
+  linear-gradient(335deg, #b00 23px, transparent 23px),
+  linear-gradient(155deg, #d00 23px, transparent 23px);
+  background-size: 58px 58px;
+  background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  max-width: 800px;
+  display: grid;
+  grid-template-columns: 1fr 46px;
+  grid-row-gap: 0.3rem;
+}
+
+main > button {
+  grid-row: span 2;
+  padding: 0;
+  margin: 0;
+  border: 2px solid peru;
+  background-color: #edebed;
+  transition: background-color 0.4s;
+}
+
+main > button:hover {
+  background-color: #ccc;
+}
+
+.m {
+  margin: 0.2rem 0.8rem;
+}
+
+.panel {
+  border: 6px ridge peru;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 0.8rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.slots {
+  width: 380px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.slots > div {
+  border: 2px ridge peru;
+  width: 110px;
+  height: 110px;
+  background-image: url('./assets/slot-110.png');
+  background-repeat: repeat-y;
+}
+
+.slots :nth-child(1) {
+  transition: background-position 1s;
+}
+
+.slots :nth-child(2) {
+  transition: background-position 2s;
+}
+
+.slots :nth-child(3) {
+  transition: background-position 3s;
+}
+
+.mt-1 {
+  margin-top: 1rem;
+}
+
+h1 {
+  font-size: 3rem;
+  text-align: center;
+  color: purple;
+  background-color: rgba(255,255,255,0.6);
+  padding: 0.2rem;
+  border: 2px solid peru;
+  text-shadow: 0px 0px 8px #222;
+}
+
+.buttons span {
+  font-weight: bold;
+}
+
+#status {
+  font-weight: bolder;
+  font-size: 2rem;
+  text-align: center;
+  animation: zomg 3s infinite;
+}
+
+@keyframes zomg {
+  0%, 100% { color: #7ccdea; }
+  16%      { color: #0074D9; }
+  32%      { color: #2ECC40; }
+  48%      { color: #FFDC00; }
+  64%      { color: #B10DC9; }
+  80%      { color: #FF4136; }
+}
