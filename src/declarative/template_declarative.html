@@ -11,7 +11,7 @@
       <div></div>
     </div>
   </div>
-  <button id="leverBtn" aria-label="Abaisser le levier!" title="Abaisser le levier!" onclick="app.leverClick()">
+  <button id="leverBtn" aria-label="Abaisser le levier!" title="Abaisser le levier!" onclick="leverClick()">
     <svg viewBox="0 -3 20 100" aria-hidden="true">
       <line x1="10" y1="10" x2="10" y2="90" stroke="#444" stroke-width="2" />
       <circle cx="10" cy="10" r="5" fill="red" />
@@ -23,9 +23,9 @@
       <div>Mise: <span id="betLabel">$0</span></div>
     </div>
     <div class="buttons mt-1">
-      <button id="betAddBtn">Miser+</button>
-      <button id="betRemoveBtn">Miser-</button>
-      <button id="resetBtn">Réinitialiser</button>
+      <button id="betAddBtn" onclick="addBetClick()">Miser+</button>
+      <button id="betRemoveBtn" onclick="removeBetClick()">Miser-</button>
+      <button id="resetBtn" onclick="resetClick()">Réinitialiser</button>
     </div>
   </div>
 </main>

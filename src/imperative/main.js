@@ -32,9 +32,8 @@ function updateSlots(state, slots, imageHeight, imageCount) {
 function checkWinState(state) {
   // For the moment just check if 
   // all equal.
-  const firstVal = state.positions[0];
   for (let i = 1; i < state.positions.length; i++) {
-    if (state.positions[i] !== firstVal) return false;
+    if (state.positions[i] !== state.positions[0]) return false;
   }
   return true;
 }
@@ -101,7 +100,7 @@ leverBtn.addEventListener('click', () => {
     setTimeout(() => {
       // Check winning conditions:
       if (checkWinState(state)) {
-        const won = state.bet * 5;
+        const won = state.bet * 7;
         state.cash += won;
         status.textContent = `Gagné $ ${won} !`;
         updateUI(state, cashLabel, betLabel);
@@ -122,7 +121,10 @@ resetBtn.addEventListener('click', () => {
   updateSlots(state, slots, imageHeight, imageCount);
   leverBtn.disabled = true;
   // Wait for 3 sec before re-enabling:
-  setTimeout(() => leverBtn.disabled = false, slotUpdateTime * 1000);
+  setTimeout(
+    () => leverBtn.disabled = false, 
+    slotUpdateTime * 1000
+  );
   // Reset the status message:
   status.textContent = '';
 });
