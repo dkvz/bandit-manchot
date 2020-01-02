@@ -6,7 +6,8 @@ function resetState() {
     cash: startMoney,
     bet: startBet,
     positions: [0, 0, 0],
-    yPositions: [0, 0, 0]
+    yPositions: [0, 0, 0],
+    prevPositions: [0, 0, 0]
   };
 }
 
@@ -23,7 +24,7 @@ function updateSlots(state, slots, imageHeight, imageCount) {
   // Minimum rolling is at least one complete
   // revolution if we rolled 0 somewhere.
   state.positions.forEach((p, i) => {
-    state.yPositions[i] += (imageCount * (i + 1) + p) * imageHeight;
+    state.yPositions[i] += (imageCount * (i + 1) + p - state.prevPositions[i]) * imageHeight;
     slots[i].style.backgroundPositionY = -state.yPositions[i] + 'px';
   });
 }
@@ -89,6 +90,7 @@ leverBtn.addEventListener('click', () => {
     // Reset the status message too.
     status.textContent = '';
     leverBtn.disabled = true;
+    state.prevPositions = state.positions;
     state.positions = state.positions.map(
       () => Math.floor(Math.random() * imageCount)
     );
