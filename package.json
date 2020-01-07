@@ -6,12 +6,14 @@
   "scripts": {
     "start": "parcel src/imperative/index.pug",
     "imperative": "npm run start",
-    "declarative": "parcel src/declarative/index.pug"
+    "declarative": "parcel src/declarative/index.pug",
+    "build-imperative": "parcel build src/declarative/index.pug --public-url ./"
   },
   "keywords": [],
   "author": "dkvz",
   "license": "MIT",
   "devDependencies": {
+    "cssnano": "^4.1.10",
     "pug": "^2.0.4"
   }
 }
