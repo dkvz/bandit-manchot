@@ -2,7 +2,6 @@
   "name": "bandit-machot",
   "version": "1.0.0",
   "description": "Didactic project to show different approaches to writing JavaScript",
-  "main": "index.js",
   "scripts": {
     "start": "parcel src/imperative/index.pug",
     "imperative": "npm run start",
@@ -13,7 +12,11 @@
   "author": "dkvz",
   "license": "MIT",
   "devDependencies": {
+    "@parcel/transformer-pug": "^2.16.3",
     "cssnano": "^4.1.10",
     "pug": "^2.0.4"
+  },
+  "dependencies": {
+    "parcel": "^2.16.3"
   }
 }

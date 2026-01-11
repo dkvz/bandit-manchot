@@ -9,7 +9,7 @@ const app = {
   imageCount: 4,
   slotUpdateTime: 3,
   slots: document.querySelectorAll('.slots > div'),
-  initialize: function() {
+  initialize: function () {
     this.state = {
       positions: [0, 0, 0],
       yPositions: [0, 0, 0],
@@ -17,6 +17,14 @@ const app = {
     };
     this.state.cash = this.startMoney;
     this.state.bet = this.startBet;
+    // Image height is different on small screens
+    // Had to do this for the embed of these
+    // slots on my blog.
+    // Normally we'd add an event listener to 
+    // watch for changes for that media query.
+    if (matchMedia("(max-width: 600px)").matches) {
+      this.imageHeight = 90
+    }
     this.updateUI();
   },
   updateUI: function () {
@@ -86,11 +94,11 @@ const app = {
       alert('Plus assez de cash!');
     }
   },
-  betAdd: function() {
+  betAdd: function () {
     this.state.bet += 5;
     this.updateUI();
   },
-  betRemove: function() {
+  betRemove: function () {
     if (this.state.bet === 5) {
       alert('Impossible de miser moins.');
     } else {
@@ -106,7 +114,7 @@ const app = {
   'betLabel',
   'status'
 ]
-.forEach(e => app[e] = document.getElementById(e));
+  .forEach(e => app[e] = document.getElementById(e));
 
 // Initialize:
 app.initialize();

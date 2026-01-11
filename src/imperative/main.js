@@ -66,9 +66,15 @@ const slots = document.querySelectorAll('.slots > div');
 // for the slots.
 const startMoney = 500,
   startBet = 20,
-  imageHeight = 110,
   imageCount = 4,
   slotUpdateTime = 3;
+// Image height is different on small screens
+// Had to do this for the embed of these
+// slots on my blog.
+// Normally we'd add an event listener to 
+// watch for changes for that media query.
+const imageHeight = matchMedia("(max-width: 600px)").matches
+  ? 90 : 110;
 
 // Object to hold state variables for 
 // the app. with a very inspired name.
@@ -122,7 +128,7 @@ resetBtn.addEventListener('click', () => {
   leverBtn.disabled = true;
   // Wait for 3 sec before re-enabling:
   setTimeout(
-    () => leverBtn.disabled = false, 
+    () => leverBtn.disabled = false,
     slotUpdateTime * 1000
   );
   // Reset the status message:
