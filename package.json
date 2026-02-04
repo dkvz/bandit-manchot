@@ -6,7 +6,7 @@
     "start": "parcel src/imperative/index.pug",
     "imperative": "npm run start",
     "declarative": "parcel src/declarative/index.pug",
-    "build-imperative": "parcel build src/declarative/index.pug --public-url ./"
+    "build-imperative": "parcel build src/imperative/index.pug --public-url ./"
   },
   "keywords": [],
   "author": "dkvz",
